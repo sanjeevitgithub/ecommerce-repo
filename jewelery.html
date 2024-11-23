@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelery Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="jewelery.js"></script>
+<style>
+    
+    .product img { width: 80%; height:140px; }
+    .product-title { font-size: 1.2em; margin: 10px 0;overflow:hidden; text-overflow:ellipsis; font-weight:bold; display:block;}
+    .product-price { color: green; font-size: 1.1em; }
+     
+    .product-description{white-space: nowrap;overflow: hidden; text-overflow: ellipsis; font-size: 12px; font-weight: bold; display: block; }
+    .product{border:1px solid rgb(193, 192, 192); margin-bottom:22px; width: 350px;padding:22px; border-radius:3px;}  
+    .jewelery-container{display:grid;grid-template-columns:repeat(3,1fr); margin-left:58px;}
+    .btn{margin-left:14px;}
+    
+</style>
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand bg-body-tertiary">
+        <div class="container-fluid">
+          <h2>Ecommerece</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0  ml-5">
+              <li class="nav-item">
+              
+                <a href="HomePage.html" target="_self" class="nav-link active" aria-current="page" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="product.html" target="_self"  class="nav-link"> Product</a>
+              </li>
+             
+              <li class="nav-item">
+                <a href="About.html" target="_self" class="nav-link" > About</a>
+              </li>
+              <li class="nav-item">
+                <a href="contact.html" target="_self" class="nav-link" >Contact</a>
+              </li> 
+             
+            </ul>
+            <div>
+              <button class="btn btn-outline-dark" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+              <button class="btn btn-outline-dark" type="submit">Register</button>
+              <button class="btn btn-outline-dark" type="submit"><i class="fa-solid fa-cart-shopping"></i>Cart(0)</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <h5  class = "text-center mt-5 text-dark">Latest Products</h5>
+    
+      <hr class = "w-80"/>
+      <div class = "text-center">
+        <button class="button">
+          <a href="#" class="nav-link btn-outline-dark active" aria-current="page"
+            >All</a
+          >
+        </button>
+        <button class="button">
+          <a href="men's.html" target="_self" class="nav-link btn-outline-dark"
+            >Men's Clothing</a
+          >
+        </button>
+        <button class="button">
+          <a href="women's.html" target="_self" class="nav-link btn-outline-dark"
+            >Women's Clothing</a
+          >
+        </button>
+        <button class="button">
+          <a
+            href="jewelery.html"
+            target="_self"
+            class="nav-link btn-outline-dark"
+            >Jewelery</a
+          >
+        </button>
+        <button class="button">
+          <a
+            href="electronics.html"
+            target="_self"
+            class="nav-link btn-outline-dark"
+            >Electronics</a>
+        </button>
+      </div>
+      <div class="jewelery-container mt-5 ml-5"  id="jeweleryContainer"></div>
+      <p class = "text-center">Made with <span >❤️</span> by Ravi Sanjeev</p>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src=".\cart.js"></script>
+  </head>
+
+  
+    <style>
+
+  .cart-page {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .container{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center ;
+  }
+  .card-element-2{
+    display:flex;
+    position:fixed;
+    margin-top:22px;
+  }
+  .cart-element-1 {
+    display: flex;
+    flex-direction:column;
+
+    justify-content: space-between;
+    width: 80%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+  }
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  .product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-minus,
+  .btn-plus {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+
+  .quantity-value {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .price-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    min-width: 120px;
+  }
+
+  .price-total {
+    font-size: 16px;
+    font-weight: bold;
+  }  
+
+  .order-summary {
+    position: fixed;
+    bottom:450px;
+    background: #fff;
+    padding:5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 600;
+    width: 280px;
+}
+
+.order-summary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.order-summary li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.order-summary button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-summary button:hover {
+    background: #444;
+}
+
+</style>
+
+
+
+  <body>
+    <nav class="navbar navbar-expand bg-body-tertiary">
+      <div class="container-fluid">
+        <h2>Ecommerece</h2>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0 ml-5">
+            <li class="nav-item">
+              <a
+                href="HomePage.html"
+                target="_self"
+                class="nav-link active"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="product.html" target="_self" class="nav-link">
+                Product</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a href="About.html" target="_self" class="nav-link"> About</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" target="_self" class="nav-link"> About</a>
+            </li>
+          </ul>
+          <div>
+            <button class="btn btn-outline-dark" type="submit">
+              <a
+                href="login.html"
+                target="_self"
+                class="nav-link btn-outline-dark"
+                ><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            </button>
+              <button class="btn btn-outline-dark" type="submit">
+                <a
+                  href="register.html"
+                  target="_self"
+                  class="nav-link btn-outline-dark"
+                  ><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a
+                >
+              </button>
+              <button class="btn btn-outline-dark" type="submit">
+                <a
+                  href="cart.html"
+                  target="_self"
+                  class="nav-link btn-outline-dark"
+                  ><i class="fa-solid fa-cart-shopping"></i>Cart(0)</a
+                >
+              </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="text-center mt-3 mb-1">Cart</h1>
+    <hr class="w-100" />
+    <div class="container" id="container">
+      <div class="cart-heading">
+        <h1 class="mt-5">Your Cart is Empty</h1>
+      </div>
+      <div>
+        <button class="btn btn-outline-dark mt-1">Continue Shopping</button>
+      </div>
+
+      <div class="mt-5">
+        <p class="text-center">Made with <span >❤️</span> by Ravi Sanjeev</p>
+      </div>
+    </div>
+
+    <div class="cart-page" id="cartPage"></div>
+
+
+<script>
+function addToCart(item) {
+    let storageData = JSON.parse(localStorage.getItem("info")) || []; // Retrieve cart or initialize 
+    let existingItemIndex = storageData.findIndex((product) => product.id === item.id);
+
+    if (existingItemIndex > -1) {
+        storageData[existingItemIndex].quantity = (storageData[existingItemIndex].quantity || 1) + 1;
+    } else {  
+        item.quantity = 1;
+        storageData.push(item);
+    }
+    localStorage.setItem("info", JSON.stringify(storageData));
+    display(localStorage.getItem("info"));
+}
+function display(storageData) {
+    let parsedData = JSON.parse(storageData);
+    let cartPage = document.getElementById("cartPage");
+    let container = document.getElementById("container");
+    container.style.display = "none";
+    cartPage.innerHTML = "";
+    let cartElementCard1 = document.createElement("div");
+    cartElementCard1.classList.add("cart-element-1");
+    let totalAmount = 0;
+
+    parsedData.forEach((item) => {
+        let card1 = document.createElement("div");
+        card1.classList.add("card-1");
+        card1.id = `product-${item.id}`;
+
+        card1.innerHTML = `
+          <div class="d-flex flex-row justify-space-around"> 
+            <div class="d-flex flex-row">
+              <img class="product-image" src="${item.image}" alt="${item.title}" />
+              <h2 class="product-title mt-5">${item.title}</h2>
+            </div>
+            <div class="d-flex flex-column align-content-center"> 
+              <div class="d-flex flex-row align-content-center"> 
+                <button data-id="${item.id}" class="btn-minus btn btn-outline-dark">-</button>
+                <p id="quantity-${item.id}" class="mx-3">${item.quantity || 1}</p>  
+                <button data-id="${item.id}" class="btn-plus btn btn-outline-dark">+</button>  
+              </div>
+            </div>
+            <p id="total-${item.id}">Price: $${item.price} x ${item.quantity || 1} = $${item.price * (item.quantity || 1)}</p>
+          </div>
+          <hr class="w-100" />
+        `;
+
+        totalAmount += item.price * (item.quantity || 1);
+        cartElementCard1.appendChild(card1);
+    }); cartPage.appendChild(cartElementCard1);
+
+
+    let cartElementCard2 = document.createElement("div");
+    cartElementCard2.classList.add("cart-element-2");
+    cartElementCard2.innerHTML = `
+      <div class="order-summary">
+        <h1>Order Summary</h1>
+        <ul>
+          <li>Products Total: $${totalAmount}</li>
+          <li>Shipping: Free</li>
+          <li>Total Amount: $${totalAmount}</li>
+        </ul>
+        <button class="btn btn-dark w-100">Go to Checkout</button>
+      </div>
+    `;
+    cartPage.appendChild(cartElementCard2);
+
+
+    document.querySelectorAll(".btn-minus").forEach((button) => {
+        button.addEventListener("click", function () {
+            updateQuantity(this.dataset.id, -1);
+        });
+    });
+
+    document.querySelectorAll(".btn-plus").forEach((button) => {
+        button.addEventListener("click", function () {
+            updateQuantity(this.dataset.id, 1);
+        });
+    });
+}
+
+function updateQuantity(itemId, change) {
+    let storageData = JSON.parse(localStorage.getItem("info")) || [];
+    let itemIndex = storageData.findIndex((product) => product.id == itemId);
+
+    if (itemIndex > -1) {
+        let item = storageData[itemIndex];
+        item.quantity = (item.quantity || 1) + change;
+
+        if (item.quantity <= 0) {
+            storageData.splice(itemIndex, 1);
+            document.getElementById(`product-${itemId}`).remove();
+        } else {
+            document.getElementById(`quantity-${itemId}`).textContent = item.quantity;
+            document.getElementById(`total-${itemId}`).textContent = `Price: $${item.price} x ${item.quantity} = $${item.price * item.quantity}`;
+        }
+        if (storageData.length === 0) {
+            localStorage.removeItem("info");
+            document.getElementById("cartPage").innerHTML = `
+                <div class="empty-cart-section">
+                    <p>Your Cart is Empty</p>
+                    <div class="continue-shopping">
+                        <a href="HomePage.html">Continue Shopping</a>
+                    </div>
+                </div>`;
+        } else {
+            localStorage.setItem("info", JSON.stringify(storageData));
+        }
+    }
+}
+let storageData = localStorage.getItem("info");
+if (storageData) {
+    display(storageData);
+}
+
+
+</script>
+  </body>
+</html>
